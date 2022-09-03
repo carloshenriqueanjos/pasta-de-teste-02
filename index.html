@@ -11,9 +11,7 @@
 
         <div class="table">
 
-            <table>
-                <tbody></tbody>
-            </table>
+            <table></table>
 
         </div>
 
@@ -23,7 +21,7 @@
         function table() {
             let xhttp = new XMLHttpRequest();
             xhttp.onload = function () {
-                document.querySelector("tbody");
+                document.querySelector("table");
             }
             xhttp.open("GET", "script.js", true);
             xhttp.send();
