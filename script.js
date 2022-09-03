@@ -1,4 +1,4 @@
-const tbody = document.querySelector("tbody");
+const tbody = document.createElement('tbody');
 
 const x = {"fisrtName":["carlos","maria", "joao"]};
 
