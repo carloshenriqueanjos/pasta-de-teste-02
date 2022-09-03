@@ -10,9 +10,9 @@
     <div class="conteiner">
 
         <div class="table">
-
-            <table></table>
-
+            <table>
+                <tbody></tbody>
+            </table>
         </div>
 
     </div>
@@ -21,7 +21,16 @@
         function table() {
             let xhttp = new XMLHttpRequest();
             xhttp.onload = function () {
-                document.querySelector("table").innerHTML = this.responseText;
+                const tbody = document.querySelector("tbody");
+                let tr = document.createElement("tr");
+
+                tr.innerHTML = `
+                <td>${this.nomes.firstName[0]}</td>
+                <td>${this.nomes.firstName[2]}</td>
+                <td>${this.nomes.firstName[3]}</td>
+                `
+
+                tbody.appendChild(tr);
             }
             xhttp.open("GET", "nomes.json", true);
             xhttp.send();
