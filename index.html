@@ -21,9 +21,9 @@
         function table() {
             let xhttp = new XMLHttpRequest();
             xhttp.onload = function () {
-                document.querySelector("table");
+                document.querySelector("table").innerHTML = this.responseText;
             }
-            xhttp.open("GET", "nomes.json", true);
+            xhttp.open("GET", "script.js", true);
             xhttp.send();
         }
 
