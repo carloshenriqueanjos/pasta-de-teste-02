@@ -13,3 +13,5 @@ function table() {
     <table>
     `
 }
+
+table()
