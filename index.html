@@ -41,15 +41,16 @@
             xhttp.send();
         }
 
-        function myFunction() {
+        function myFunction(test) {
+            const jsonDoc = JSON.parse(test)
             let table = document.getElementById("demo");
 
             table.innerHTML = `
                 <table>
                     <tr>
-                        <th>${nomes.firstName[0]}</th>
-                        <th>${nomes.firstName[2]}</th>
-                        <th>${nomes.firstName[3]}</th>
+                        <th>${test[0]}</th>
+                        <th>${test[2]}</th>
+                        <th>${test[3]}</th>
                     </tr>
                 </table>
             `
