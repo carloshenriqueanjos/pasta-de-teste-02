@@ -15,19 +15,18 @@
     <div class="conteiner">
 
         <h1>TESTE, BANCO DE DADOS...</h1>
-        <button type="button" onclick="openTable()">Mostrar tabela</button>
+        <!-- <button type="button" onclick="openTable()">Mostrar tabela</button> -->
         <div id="demo"></div>
 
     </div>
     <script>
 
-        function openTable() {
-            let xhttp = new XMLHttpRequest();
-            xhttp.onload = function () {
-                document.getElementById("demo").innerHTML = this.responseText;
-            }
-            xhttp.open("GET", "script.js", true);
-            xhttp.send();
+        getText("nomes.json");
+
+        async function getText(file) {
+            let x = await fetch(file);
+            let y = await x.text();
+            document.getElementById("demo").innerHTML = y;
         }
 
     </script>
