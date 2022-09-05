@@ -23,13 +23,7 @@
             xhttp.onload = function () {
                 const tbody = document.querySelector("tbody");
                 let tr = document.createElement("tr");
-
-                tr.innerHTML = `
-                <td>${this.nomes[0]}</td>
-                <td>${this.nomes[2]}</td>
-                <td>${this.nomes[3]}</td>
-                `
-
+                tr.innerHTML = this.responseText;
                 tbody.appendChild(tr);
             }
             xhttp.open("GET", "nomes.json", true);
