@@ -34,11 +34,11 @@
 
         function loadDoc() {
             const xhttp = new XMLHttpRequest();
+            xhttp.open("GET", "nomes.json", true);
             xhttp.onload = function() {
                 let result = JSON.parse(xhttp.responseText);
                 document.getElementById("demo").innerHTML = result;
             }
-            xhttp.open("GET", "nomes.json", true);
             xhttp.send();
         }
 
