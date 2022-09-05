@@ -9,24 +9,50 @@
         body {
             text-align: center;
         }
+
+        table,th,td {
+            border : 1px solid black;
+            border-collapse: collapse;
+        }
+        th,td {
+            padding: 5px;
+        }
+
     </style>
 </head>
 <body>
     <div class="conteiner">
 
         <h1>TESTE, BANCO DE DADOS...</h1>
-        <!-- <button type="button" onclick="openTable()">Mostrar tabela</button> -->
+
+        <button type="button" onclick="loadDoc()">Mostrar tabela</button> 
+
         <div id="demo"></div>
 
     </div>
     <script>
 
-        getText("nomes.json");
+        function loadDoc() {
+            const xhttp = new XMLHttpRequest();
+            xhttp.onload = function() {
+                myFuction(this);
+            }
+            xhttp.open("GET", "nomes.json", true);
+            xhttp.send();
+        }
 
-        async function getText(file) {
-            let x = await fetch(file);
-            let y = await x.text();
-            document.getElementById("demo").innerHTML = y;
+        function myFunction() {
+            let table = document.getElementById("demo");
+
+            table.innerHTML = `
+                <table>
+                    <tr>
+                        <th>${nomes.firstName[0]}</th>
+                        <th>${nomes.firstName[2]}</th>
+                        <th>${nomes.firstName[3]}</th>
+                    </tr>
+                </table>
+            `
         }
 
     </script>
