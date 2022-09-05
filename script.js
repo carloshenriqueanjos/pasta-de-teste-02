@@ -1,5 +1,3 @@
-const tbody = document.createElement('tbody');
-
 const nomes = {"fisrtName":["carlos","maria", "joao"]};
 
 function table() {
@@ -10,7 +8,6 @@ function table() {
     <td>${nomes.fisrtName[1]}</td>
     <td>${nomes.fisrtName[2]}</td>
     `
-    tbody.appendChild(tr);
 }
 
 table()
