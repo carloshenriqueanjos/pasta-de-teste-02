@@ -5,15 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <div class="conteiner">
 
-        <div class="table">
-            <table>
-                <tbody></tbody>
-            </table>
-        </div>
+        <h1>TESTE, BANCO DE DADOS...</h1>
+
+        <div id="table"></div>
 
     </div>
     <script>
@@ -21,16 +24,11 @@
         function table() {
             let xhttp = new XMLHttpRequest();
             xhttp.onload = function () {
-                const tbody = document.querySelector("tbody");
-                let tr = document.createElement("tr");
-                tr.innerHTML = this.responseText;
-                tbody.appendChild(tr);
+                document.getElementById("table").innerHTML = this.responseText;
             }
             xhttp.open("GET", "script.js", true);
             xhttp.send();
         }
-
-        table()
 
     </script>
 </body>
