@@ -39,7 +39,7 @@
                 let xhttpGET = JSON.parse(xhttp.responseText);
                 let xhttpSET = JSON.stringify(xhttpGET);
 
-                document.getElementById("demo").innerHTML = xhttpGET.nomes[0];
+                document.getElementById("demo").innerHTML = xhttpSET.nomes[0];
             }
             xhttp.send();
         }
