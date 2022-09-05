@@ -15,13 +15,13 @@
     <div class="conteiner">
 
         <h1>TESTE, BANCO DE DADOS...</h1>
-
+        <button type="button" onclick="openTable()">Mostrar tabela</button>
         <div id="demo"></div>
 
     </div>
     <script>
 
-        function table() {
+        function openTable() {
             let xhttp = new XMLHttpRequest();
             xhttp.onload = function () {
                 document.getElementById("demo").innerHTML = this.responseText;
@@ -30,8 +30,6 @@
             xhttp.send();
         }
 
-        table()
-        
     </script>
 </body>
 </html>
