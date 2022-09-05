@@ -35,25 +35,13 @@
         function loadDoc() {
             const xhttp = new XMLHttpRequest();
             xhttp.onload = function() {
-                myFuction(this);
+                const jsonDoc = JSON.parse(this)
+                let table = document.getElementById("demo");
+
+                table.innerHTML = jsonDoc;
             }
             xhttp.open("GET", "nomes.json", true);
             xhttp.send();
-        }
-
-        function myFunction(test) {
-            const jsonDoc = JSON.parse(test)
-            let table = document.getElementById("demo");
-
-            table.innerHTML = `
-                <table>
-                    <tr>
-                        <th>${test[0]}</th>
-                        <th>${test[2]}</th>
-                        <th>${test[3]}</th>
-                    </tr>
-                </table>
-            `
         }
 
     </script>
