@@ -38,8 +38,15 @@
             xhttp.onload = () => {
                 let xhttpGET = JSON.parse(xhttp.responseText);
                 let xhttpSET = JSON.stringify(xhttpGET);
+                let table = document.getElementById("demo");
 
-                document.getElementById("demo").innerHTML = xhttpSET.nomes;
+                table.innerHTML = `
+                <table>
+                    <tr>
+                        <th>${xhttpSET.firstName[0]}</th>
+                    </tr>
+                </table>
+                `
             }
             xhttp.send();
         }
