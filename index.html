@@ -25,24 +25,20 @@
 
         <h1>TESTE, BANCO DE DADOS...</h1>
 
-        <button type="button" onclick="loadDoc()">Mostrar tabela</button> 
+        <button type="button" onclick="loadDoc('nomes.json')">Mostrar tabela</button> 
 
         <div id="demo"></div>
 
     </div>
     <script>
 
-        function loadDoc() {
-            getText("nomes.json");
+        async function loadDoc(file) {
+            let x = await fetch(file);
+            let y = await x.text();
 
-            async function getText(file) {
-                let x = await fetch(file);
-                let y = await x.text();
-
-                document.getElementById("demo").innerHTML = y;
-            }
-
+            document.getElementById("demo").innerHTML = y;
         }
+
 
     </script>
 </body>
