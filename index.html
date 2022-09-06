@@ -32,7 +32,7 @@
 
         function loadDoc() {
             const xhttp = new XMLHttpRequest();
-            xhttp.onload = () => {
+            xhttp.onload = function() {
                 const myOBJ = JSON.parse(this.responseText);
                 document.getElementById("demo").innerHTML = myOBJ.nome;
             }
