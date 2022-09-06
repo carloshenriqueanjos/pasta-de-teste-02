@@ -27,7 +27,9 @@
 
         <button type="button" onclick="loadDoc('nomes.json')">Mostrar tabela</button> 
 
-        <div id="demo"></div>
+        <div>
+            <ul id="demo"></ul>
+        </div>
 
     </div>
     <script>
@@ -38,7 +40,7 @@
 
             for (i = 0; i < y.lenght; i++) {
                 console.log(y[i]);
-                document.getElementById("demo").innerHTML = y[i];
+                document.getElementById("demo").innerHTML = "<li>" + y[i] + "</li>";
             }
         }
 
