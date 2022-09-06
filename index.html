@@ -35,23 +35,27 @@
         function loadDoc() {
             const xhttp = new XMLHttpRequest();
             xhttp.open("GET", "nomes.json", true);
+            xhttp.responseType = "json";
+            xhttp.send();
+
             xhttp.onload = () => {
-                let xhttpGET = JSON.parse(xhttp.responseText);
-                let xhttpSET = JSON.stringify(xhttpGET);
+
+                let resposta = xhttp.response;
+
+                for (i = 0; i < resposta.length; i++) {
 
                     let table = document.getElementById("demo");
 
-                    table.innerHTML = `
+                    table.innerHTML += `
                     <table>
                         <tr>
-                            <th>${xhttpSET.nomes[0]}</th>
-                            <th>${xhttpSET.nomes[1]}</th>
-                            <th>${xhttpSET.nomes[2]}</th>
+                            <th>${resposta[i]}</th>
+
                         </tr>
                     </table>
                     `
+                }
             }
-            xhttp.send();
         }
 
     </script>
