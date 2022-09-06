@@ -25,25 +25,29 @@
 
         <h1>TESTE, BANCO DE DADOS...</h1>
 
-        <button type="button" onclick="loadDoc('nomes.json')">Mostrar tabela</button> 
+        <button type="button" onclick="loadDoc()">button</button> 
 
-        <div>
-            <ul id="demo"></ul>
-        </div>
+        <div id="demo"></div>
 
     </div>
     <script>
 
-        async function loadDoc(file) {
-            let x = await fetch(file);
-            let y = await x.text();
+        function loadDoc() {
+            const xhttp = new XMLHttpRequest();
+            xhttp.onload = () => {
+                const xhttpJson = this.responseText;
+                const x = xhttpJson.getElementByTagName("nomes");
+                let text = '';
 
-            for (i = 0; i < y.lenght; i++) {
-                console.log(y[i]);
-                document.getElementById("demo").innerHTML = "<li>" + y[i] + "</li>";
+                for (i = 0; i < x.length; i++) {
+                    text += text + x[i].childNodes[0].nodeValue + "<br>";
+                }
+
+                document.getElementById("demo").innerHTML = text;
             }
+            xhttp.open("GET", "nomes.json", true);
+            xhttp.send();
         }
-
 
     </script>
 </body>
