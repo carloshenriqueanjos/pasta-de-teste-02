@@ -34,7 +34,7 @@
             const xhttp = new XMLHttpRequest();
             xhttp.onload = () => {
                 const myOBJ = JSON.parse(this.responseText);
-                document.getElementById("demo").innerHTML = myOBJ.firstName;
+                document.getElementById("demo").innerHTML = myOBJ.nome;
             }
             xhttp.open("GET", "nomes.txt", true);
             xhttp.send();
