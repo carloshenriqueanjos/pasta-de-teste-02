@@ -36,7 +36,9 @@
             let x = await fetch(file);
             let y = await x.text();
 
-            document.getElementById("demo").innerHTML = y;
+            for (i = 0; i < y.lenght; i++) {
+                document.getElementById("demo").innerHTML += y[i];
+            }
         }
 
 
