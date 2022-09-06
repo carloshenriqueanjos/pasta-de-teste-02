@@ -30,6 +30,15 @@
     </div>
     <script>
 
+        function loadDoc() {
+            const xhttp = new XMLHttpRequest();
+            xhttp.onload = () => {
+                const myOBJ = JSON.parse(this.responseText);
+                document.getElementById("demo").innerHTML = myOBJ.firstName;
+            }
+            xhttp.open("GET", "nomes.json", true);
+            xhttp.send();
+        }
 
     </script>
 </body>
