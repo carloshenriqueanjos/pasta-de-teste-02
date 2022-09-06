@@ -36,26 +36,18 @@
             const xhttp = new XMLHttpRequest();
             xhttp.open("GET", "nomes.json", true);
             xhttp.onload = () => {
-                let names;
                 let xhttpGET = JSON.parse(xhttp.responseText);
                 let xhttpSET = JSON.stringify(xhttpGET);
 
-                function createTable(names) {
                     let table = document.getElementById("demo");
 
                     table.innerHTML = `
                     <table>
                         <tr>
-                            <th>${names.firsName}</th>
+                            <th>${xhttpSET.firsName}</th>
                         </tr>
                     </table>
                     `
-                }
-
-                function loadNames() {
-                    names = xhttpGET;
-                }
-                loadNames()
             }
             xhttp.send();
         }
