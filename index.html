@@ -40,8 +40,6 @@
                 let xhttpGET = JSON.parse(xhttp.responseText);
                 let xhttpSET = JSON.stringify(xhttpGET);
 
-                names = xhttpGET;
-
                 function createTable(names) {
                     let table = document.getElementById("demo");
 
@@ -53,6 +51,11 @@
                     </table>
                     `
                 }
+
+                function loadNames() {
+                    names = xhttpGET;
+                }
+                loadNames()
             }
             xhttp.send();
         }
