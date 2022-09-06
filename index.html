@@ -36,7 +36,7 @@
             const xhttp = new XMLHttpRequest();
             xhttp.onload = () => {
                 const xhttpJson = this.responseText;
-                const x = xhttpJson.getElementByTagName("nomes");
+                const x = xhttpJson.getElementByTagName("firstName");
                 let text = '';
 
                 for (i = 0; i < x.length; i++) {
