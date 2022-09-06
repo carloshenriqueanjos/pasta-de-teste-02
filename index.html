@@ -31,7 +31,7 @@
     <script>
 
         const xhttp = new XMLHttpRequest();
-        xhttp.onload = function() {
+        xhttp.onload = () => {
             const myOBJ = JSON.parse(this.responseText);
             document.getElementById("demo").innerHTML = myOBJ.nome;
         }
