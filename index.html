@@ -33,29 +33,15 @@
     <script>
 
         function loadDoc() {
-            const xhttp = new XMLHttpRequest();
-            xhttp.open("GET", "nomes.json", true);
-            xhttp.responseType = "json";
-            xhttp.send();
+            getText("nomes.json");
 
-            xhttp.onload = () => {
+            async function getText(file) {
+                let x = await fetch(file);
+                let y = await x.text();
 
-                let resposta = xhttp.response;
-
-                for (i = 0; i < resposta.length; i++) {
-
-                    let table = document.getElementById("demo");
-
-                    table.innerHTML += `
-                    <table>
-                        <tr>
-                            <th>${resposta[i]}</th>
-
-                        </tr>
-                    </table>
-                    `
-                }
+                document.getElementById("demo").innerHTML = y;
             }
+
         }
 
     </script>
