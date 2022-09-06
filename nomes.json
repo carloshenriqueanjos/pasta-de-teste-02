@@ -1,7 +1,3 @@
 {
-    "nomes": [
-        {"firstName": "carlos"},
-        {"firstName": "maria"},
-        {"firstName": "joao"}
-    ]
+    "nomes": ["carlos", "maria", "joao"]
 }
