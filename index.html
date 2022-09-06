@@ -23,8 +23,6 @@
 <body>
     <div class="conteiner">
 
-        <h1>TESTE, BANCO DE DADOS...</h1>
-
         <button type="button" onclick="loadDoc()">button</button> 
 
         <div id="demo"></div>
@@ -32,22 +30,6 @@
     </div>
     <script>
 
-        function loadDoc() {
-            const xhttp = new XMLHttpRequest();
-            xhttp.onload = () => {
-                const xhttpJson = this.responseText;
-                const x = xhttpJson.getElementByTagName("firstName");
-                let text = '';
-
-                for (i = 0; i < x.length; i++) {
-                    text += text + x[i].childNodes[0].nodeValue + "<br>";
-                }
-
-                document.getElementById("demo").innerHTML = text;
-            }
-            xhttp.open("GET", "nomes.json", true);
-            xhttp.send();
-        }
 
     </script>
 </body>
