@@ -23,22 +23,20 @@
 <body>
     <div class="conteiner">
 
-        <button type="button" onclick="loadDoc()">button</button> 
+        <!-- <button type="button" onclick="loadDoc()">button</button>  -->
 
         <div id="demo"></div>
 
     </div>
     <script>
 
-        function loadDoc() {
-            const xhttp = new XMLHttpRequest();
-            xhttp.onload = function() {
-                const myOBJ = JSON.parse(this.responseText);
-                document.getElementById("demo").innerHTML = myOBJ.nome;
-            }
-            xhttp.open("GET", "nomes.txt", true);
-            xhttp.send();
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = function() {
+            const myOBJ = JSON.parse(this.responseText);
+            document.getElementById("demo").innerHTML = myOBJ.nome;
         }
+        xhttp.open("GET", "nomes.txt");
+        xhttp.send();
 
     </script>
 </body>
