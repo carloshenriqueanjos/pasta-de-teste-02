@@ -1,3 +1,6 @@
 {
-    "nome": ["carlos", "anjos"]
+    "nomes": [
+        {"nome": "carlos"},
+        {"nome": "anjos"}
+    ]
 }
