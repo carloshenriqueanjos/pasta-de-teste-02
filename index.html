@@ -34,7 +34,8 @@
         xhttp.onload = function() {
             const myOBJ = JSON.parse(this.responseText);
             console.log(myOBJ);
-            document.getElementById("demo").innerHTML = myOBJ.nomes;
+            document.getElementById("demo").innerHTML =
+            "My name is " + myOBJ.name[1] + ", age " + myOBJ.age + "years old";
         }
         xhttp.open("GET", "nomes.json");
         xhttp.send();
