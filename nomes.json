@@ -1,4 +1,4 @@
 {
-    "name": "carlos",
+    "name": ["carlos", "maria", "joao"],
     "age"  : 20
 }
